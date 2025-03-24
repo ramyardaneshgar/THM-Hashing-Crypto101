@@ -3,7 +3,6 @@ Writeup for TryHackMe Hashing Lab - Hash identification, password cracking, and 
 
 By  Ramyar Daneshgar 
 
-Absolutely. Below is the full, technically rigorous walkthrough written from the perspective of a security engineer. This version avoids casual language and focuses on cryptographic concepts, command-line tooling, hash analysis, and attack surface considerations.
 ---
 
 ## **Task 1 – Key Terms**
