@@ -139,8 +139,6 @@ To identify the **Hashcat mode** for cracking an HMAC where `key = password`, I 
 
 ## **Conclusion and Operational Relevance**
 
-This room reinforces the critical importance of properly implementing cryptographic primitives. Hashing is not encryption, and while both serve different goals, their misuse results in systemic vulnerabilities. From a security engineering standpoint, the following practices must be observed:
-
 - Never store passwords in plaintext or encrypted form. Use **strong, salted hash algorithms** such as bcrypt or Argon2.
 - Always verify file downloads using published cryptographic hashes.
 - Understand the limitations of legacy algorithms like MD5 and SHA1, which have been proven to allow **collision attacks**.
