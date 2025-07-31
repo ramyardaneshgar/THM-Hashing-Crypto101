@@ -1,5 +1,5 @@
-# THM-Hashing-Crypto101
-Writeup for TryHackMe Hashing Lab - Hash identification, password cracking, and integrity validation using Hashcat, John the Ripper, sha1sum, and Splunk.
+# Hashing
+Hash identification, password cracking, and integrity validation using Hashcat, John the Ripper, sha1sum, and Splunk.
 
 By  Ramyar Daneshgar 
 
@@ -43,7 +43,7 @@ I referenced the MD5 specification and determined its output size is 128 bits, o
 
 ### Real-World Applications:
 - **Password Storage:** Hashing with salt and slow algorithms (bcrypt, Argon2).
-- **Integrity Checking:** Hashes used to verify data at rest or in transit (e.g., ISO downloads).
+- **Integrity Checking:** Hashes used to verify data at rest or in transit (ISO downloads).
 - **Fingerprinting:** Malware signatures, forensics, duplicate detection.
 
 I examined historical failures:
@@ -64,9 +64,9 @@ Rainbow tables precompute unsalted hashes to invert them rapidly. I manually map
 
 ### Detection Approach:
 Hash recognition depends on:
-- **Prefix (e.g., $6$ = SHA512crypt)**
-- **Length (e.g., 32 chars = MD5/NTLM)**
-- **Context (e.g., Windows = NTLM, Linux = SHA512crypt)**
+- **Prefix ($6$ = SHA512crypt)**
+- **Length (32 chars = MD5/NTLM)**
+- **Context (Windows = NTLM, Linux = SHA512crypt)**
 
 I validated hash types using [Hashcat’s example hash library](https://hashcat.net/wiki/doku.php?id=example_hashes) and file path conventions (`/etc/shadow`, `SAM` on Windows).
 
@@ -118,7 +118,7 @@ hashcat -m 0 -a 0 hash.txt rockyou.txt
 ## **Task 6 – Hashing for Integrity Checking**
 
 ### File Integrity:
-I validated that cryptographic hashes (e.g., SHA1, SHA256) are used to confirm file integrity. I computed hashes using:
+I validated that cryptographic hashes (SHA1, SHA256) are used to confirm file integrity. I computed hashes using:
 
 ```bash
 sha1sum kali-2019.4-amd64.iso
